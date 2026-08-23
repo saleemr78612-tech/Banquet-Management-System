@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-ivory-50: #FDFBF7;
+  --color-ivory-100: #FAF7F2;
+  --color-ivory-200: #F2ECE1;
+  --color-ivory-300: #E6DCC9;
+
+  --color-maroon-50: #FBEFF2;
+  --color-maroon-100: #F0D3DC;
+  --color-maroon-400: #A8385C;
+  --color-maroon-500: #7A1F3D;
+  --color-maroon-600: #611931;
+  --color-maroon-700: #4A1326;
+  --color-maroon-900: #2E0C18;
+
+  --color-gold-100: #F6EAC4;
+  --color-gold-300: #E0BF5E;
+  --color-gold-500: #C9A227;
+  --color-gold-600: #A8841C;
+
+  --color-ink-100: #F4F1EF;
+  --color-ink-400: #6B5D5F;
+  --color-ink-600: #423639;
+  --color-ink-800: #2B2224;
+  --color-ink-900: #1A1216;
+
+  --color-success-100: #E4F2E8;
+  --color-success-500: #2F7A4F;
+  --color-success-600: #235E3D;
+
+  --color-warning-100: #FBEDDD;
+  --color-warning-500: #C97A1F;
+  --color-warning-600: #A2621A;
+
+  --color-danger-100: #F9E4E4;
+  --color-danger-500: #B23A3A;
+  --color-danger-600: #8E2C2C;
+
+  --shadow-card: 0 1px 2px rgba(46, 12, 24, 0.04), 0 4px 16px rgba(46, 12, 24, 0.06);
+  --shadow-card-hover: 0 2px 4px rgba(46, 12, 24, 0.06), 0 8px 24px rgba(46, 12, 24, 0.10);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-ivory-100);
+  color: var(--color-ink-800);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+html.dark body {
+  background-color: var(--color-ink-900);
+  color: var(--color-ivory-200);
+}
+
+.seal-divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-500) 15%, var(--color-gold-500) 85%, transparent);
+  opacity: 0.5;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-100);
+  border-radius: 8px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-ink-600);
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #print-slip, #print-slip * {
+    visibility: visible;
+  }
+  #print-slip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
