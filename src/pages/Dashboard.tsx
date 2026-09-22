@@ -33,7 +33,7 @@ export default function Dashboard() {
     <div className="space-y-6">
       <ReminderCards />
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
         <StatCard label="Total Bookings" value={String(stats.totalBookings)} icon={CalendarCheck} tone="maroon" />
         <StatCard label="Upcoming Events" value={String(stats.upcomingEvents)} icon={CalendarClock} tone="gold" />
         <StatCard label="Total Customers" value={String(stats.totalCustomers)} icon={Users} tone="maroon" />
